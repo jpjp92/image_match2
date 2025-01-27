@@ -7,7 +7,7 @@ class ImageMatchingGame {
         this.remainingTime = this.timeLimit;
         this.timer = null;
         this.mode = "normal";
-        this.totalImages = 30;
+        this.totalImages = 15;
         this.preloadedImages = new Map();
         
         document.addEventListener('DOMContentLoaded', () => {
