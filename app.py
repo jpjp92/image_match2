@@ -20,7 +20,7 @@ def index():
 @app.route('/api/scores', methods=['GET'])
 def get_scores():
     try:
-        response = supabase.table('game_scores')\
+        response = supabase.table('game_scores2')\
             .select('player_name,score,difficulty,time_taken')\
             .order('score', desc=True)\
             .limit(10)\
@@ -33,7 +33,7 @@ def get_scores():
 def save_score():
     try:
         data = request.json
-        result = supabase.table('game_scores').insert({
+        result = supabase.table('game_scores2').insert({
             'player_name': data['player_name'],
             'score': data['score'],
             'difficulty': data['difficulty'],
