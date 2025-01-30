@@ -1,3 +1,4 @@
+/* 기본 스타일 (PC 우선) */
 .game-container {
     max-width: 800px;
     margin: 0 auto;
@@ -36,13 +37,109 @@
     transform: rotateY(360deg);
 }
 
-/* .card img {
+.card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: none;
-} */
+    opacity: 0;
+    visibility: hidden;
+}
 
+.card.flipped img {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s;
+}
+
+.leaderboard {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.leaderboard table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.leaderboard th,
+.leaderboard td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+/* 모바일 최적화 */
+@media (max-width: 768px) {
+    .game-container {
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .game-board {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 5px;
+    }
+
+    .card {
+        width: 100%;
+        height: auto;
+    }
+
+    .controls input,
+    .controls select,
+    .controls button {
+        width: 100%;
+        font-size: 18px;
+        padding: 12px;
+    }
+}
+
+
+
+
+/* .game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.controls {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.controls input,
+.controls select,
+.controls button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.card {
+    aspect-ratio: 1;
+    background-color: #ddd;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card.flipped {
+    transform: rotateY(360deg);
+}
 
 .card img {
     width: 100%;
@@ -79,3 +176,4 @@
     border: 1px solid #ddd;
     text-align: center;
 }
+ */
